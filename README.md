@@ -18,13 +18,13 @@ Scripts for the database are in the SQL folder inside the root folder of the pro
 
 The Primary key is set to auto-increment.
 
-TopLevelNode - 
+TopLevelNode - The orignal node underneath the Home item that the current item derives from will be the TopLevelNode ID.
 
-ItemLevel - 
+ItemLevel - The value of the level in the hierarchy the item is.
 
-ItemOrder - 
+ItemOrder - The position of which the item should be sitting under its parent item.
 
-ParentId - 
+ParentId - The id of the node directly about the current item in the hierarchy;
 
 
 # Web Api - Section 2
