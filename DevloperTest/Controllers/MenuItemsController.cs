@@ -25,33 +25,35 @@ namespace DevloperTest.Controllers
             return db.MenuItems;
         }
 
-        // GET: api/MenuItems/5
+      
         [ResponseType(typeof(MenuItem))]
         public string GetMenuItem(int id)
         {
+            string menuItemJson = "";
             MenuItem menuItem = db.MenuItems.Find(id);
+           
+            if (menuItem == null)
+            {
+                return menuItemJson;
+            }
             List<MenuItem> menuItemList = db.MenuItems.Where(x => x.TopLevelNode == menuItem.Id).ToList();
-            //if (menuItem == null)
-            //{
-            //    return NotFound();
-            //}
-            string menuItemJson = JsonConvert.SerializeObject(menuItemList);
+            menuItemJson = JsonConvert.SerializeObject(menuItemList);
             return menuItemJson;
-            //return Ok(menuItem);
+ 
         }
         [ResponseType(typeof(MenuItem))]
         public string GetMenuItem(string value)
         {
+            string menuItemJson = "";
             MenuItem menuItem = db.MenuItems.Where(x => x.Title.ToLower() == value.ToLower()).FirstOrDefault();
-            List<MenuItem> menuItemList = new List<MenuItem>();
-            //if (menuItem == null)
-            //{
-            //    return NotFound();
-            //}
-            string menuItemJson = JsonConvert.SerializeObject(menuItemList);
+            if (menuItem == null)
+            {
+                return menuItemJson;
+            }
+            List<MenuItem> menuItemList = db.MenuItems.Where(x => x.TopLevelNode == menuItem.Id).ToList();
+            menuItemJson = JsonConvert.SerializeObject(menuItemList);
             return menuItemJson;
-            // return menuItemList;
-            //  return Ok(menuItem);
+     
         }
 
 
