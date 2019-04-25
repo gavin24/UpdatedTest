@@ -1,14 +1,15 @@
 # ReadMe
 
 # Technologies
-Visual studio 2017
-.net framework 4.6.1
-asp.net mvc.
-entity framework
-microsoft asp.net web api
-Cors enabled.
+This project uses:
+-Visual studio 2017
+-.net framework 4.6.1
+-mvc
+-entity framework
+-microsoft asp.net web api
+-Cors has been enabled.
 
-# Sql Server
+# Sql Server - Section 1
 Created an mdf database in the App_Data folder.
 
 Created an ado data enity model from the database in the models folder.
@@ -26,7 +27,7 @@ ItemOrder -
 ParentId - 
 
 
-# Code
+# Web Api - Section 2
 Created A web api controller called "MenuItemsController"
 GetMenuItems returns a list of the "MenuItems" Model from the database.
 
